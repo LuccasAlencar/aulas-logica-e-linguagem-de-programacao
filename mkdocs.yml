@@ -63,16 +63,11 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Aulas:
-    - Aula 1 - Introdução à estrutura básica de programação: aulas/Aula 1 - Introdução à estrutura básica de programação.md
-    - Aula 2 - Algoritmos no cotidiano: aulas/Aula 2 - Algoritmos no cotidiano.md
-    - Aula 3 - Fluxogramas e representação visual: aulas/Aula 3 - Fluxogramas e representação visual.md
-    - Aula 4 - Variáveis e tipos de dados: aulas/Aula 4 - Variáveis e tipos de dados.md
-    - Aula 5 - Entrada de dados: aulas/Aula 5 - Entrada de dados.md
-    - Aula 6 - Processamento de dados: aulas/Aula 6 - Processamento de dados.md
-    - Aula 7 - Saída de dados: aulas/Aula 7 - Saída de dados.md
-    - Aula 8 - Exercícios integrados (entrada, processamento e saída): aulas/Aula 8 - Exercícios integrados (entrada, processamento e saída).md
-    - Aula 9 - Condição simples- introdução ao SE: aulas/Aula 9 - Condição simples- introdução ao SE.md
-    - Aula 10 - Condição composta- SE...SENÃO: aulas/Aula 10 - Condição composta- SE...SENÃO.md
+    - Aula 1 - Introdução à estrutura básica de programação: aulas/aula1-introducao.md
+    - Aula 2 - Algoritmos no cotidiano: aulas/aula2-algoritmos.md
+    - Aula 3 - Fluxogramas e representação visual: aulas/aula3-fluxogramas.md
+    - Aula 4 - Variáveis e tipos de dados: aulas/aula4-variaveis-tipos.md
+
     
 
 extra:
