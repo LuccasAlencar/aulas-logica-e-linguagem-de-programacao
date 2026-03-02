@@ -63,11 +63,14 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Aulas:
-    - Aula 1 - Introdução à estrutura básica de programação: aulas/aula1-introducao.md
-    - Aula 2 - Algoritmos no cotidiano: aulas/aula2-algoritmos.md
-    - Aula 3 - Fluxogramas e representação visual: aulas/aula3-fluxogramas.md
-    - Aula 4 - Variáveis e tipos de dados: aulas/aula4-variaveis-tipos.md
-    - Aula 5 - Entrada de Dados : aulas/aula5-entradadedados.md
+    - Aula 1 - Introdução à estrutura básica de programação: aulas/aula1.md
+    - Aula 2 - Algoritmos no cotidiano: aulas/aula2.md
+    - Aula 3 - Fluxogramas e representação visual: aulas/aula3.md
+    - Aula 4 - Variáveis e tipos de dados: aulas/aula4.md
+    - Aula 5 - Entrada de Dados : aulas/aula5.md
+    - Aula 6 — Processamento de dados: aulas/aula6.md
+    - Aula 7 — Saída de dados: aulas/aula7.md
+    - Aula 8 — Exercícios: aulas/aula8.md
 
     
 
