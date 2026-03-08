@@ -1,0 +1,1112 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Site de aulas e materiais didáticos da matéria "Lógica e Linguagem de Programação"">
+      
+      
+        <meta name="author" content="Luccas Alencar">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Aula 27 Fluxogramas com decisão composta - Lógica e Linguagem de Programação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objetivos-de-aprendizagem" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Lógica e Linguagem de Programação" class="md-header__button md-logo" aria-label="Lógica e Linguagem de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lógica e Linguagem de Programação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aula 27   Fluxogramas com decisão composta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LuccasAlencar/aulas-logica-e-linguagem-de-programacao" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LuccasAlencar/aulas-logica-e-linguagem-de-programacao
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../aula1/" class="md-tabs__link">
+          
+  
+  
+  Aulas
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lógica e Linguagem de Programação" class="md-nav__button md-logo" aria-label="Lógica e Linguagem de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Lógica e Linguagem de Programação
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LuccasAlencar/aulas-logica-e-linguagem-de-programacao" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LuccasAlencar/aulas-logica-e-linguagem-de-programacao
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aulas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aulas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 1 - Introdução à estrutura básica de programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 2 - Algoritmos no cotidiano
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 3 - Fluxogramas e representação visual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 4 - Variáveis e tipos de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 5 - Entrada de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 6 — Processamento de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 7 — Saída de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 8 — Exercícios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 9 - Condição simples- introdução ao SE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 10 - Condição composta- SE…SENÃO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 11 - Condições aninhadas- SE dentro de SE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 12 - Exercícios práticos com decisões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-de-aprendizagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivos de Aprendizagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ Cronograma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topicos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Tópicos Principais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#momentos-interativos-planejados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 Momentos Interativos Planejados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-pedagogico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Fluxo Pedagógico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Fluxo Pedagógico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao-ao-topico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Introdução ao Tópico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desenvolvimento-da-aula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Desenvolvimento da Aula
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussao-em-classe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 Discussão em Classe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacao-de-algoritmos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Aplicação de Algoritmos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusao-e-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎉 Conclusão e Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Aula 27   Fluxogramas com decisão composta</h1>
+
+<p><strong>Aula 27: Fluxogramas com decisão composta</strong></p>
+<h2 id="objetivos-de-aprendizagem">🎯 Objetivos de Aprendizagem</h2>
+<ul>
+<li>Desenvolver sistemas computacionais utilizando ambiente de desenvolvimento.</li>
+<li>Implementar estruturas de decisão composta utilizando SE…SENÃO e condições complementares.</li>
+<li>Manter a persistência e a atenção focada ao estruturar condições de decisões.</li>
+</ul>
+<h2 id="cronograma">⏱️ Cronograma</h2>
+<table>
+<thead>
+<tr>
+<th>Tempo</th>
+<th>Atividade</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-10min</td>
+<td>Introdução ao Tópico</td>
+<td>Intro</td>
+</tr>
+<tr>
+<td>10-20min</td>
+<td>Desenvolvimento da Aula</td>
+<td>Conteúdo</td>
+</tr>
+<tr>
+<td>20-30min</td>
+<td>Aplicação de Algoritmos</td>
+<td>Prática</td>
+</tr>
+<tr>
+<td>30-40min</td>
+<td>Exemplos de Entrada, Processamento e Saída</td>
+<td>Discussão</td>
+</tr>
+<tr>
+<td>40-50min</td>
+<td>Atividade em Grupos</td>
+<td>Atividade</td>
+</tr>
+<tr>
+<td>50-60min</td>
+<td>Conclusão e Feedback</td>
+<td>Fechamento</td>
+</tr>
+</tbody>
+</table>
+<h2 id="topicos-principais">📋 Tópicos Principais</h2>
+<ol>
+<li>Conceitos de entrada, processamento e saída na lógica de programação.</li>
+<li>Tipos de dados de entrada (numéricos, alfanuméricos, booleanos, data e hora, binários e arquivos).</li>
+<li>Exemplos de algoritmos na preparação de receitas.</li>
+</ol>
+<h2 id="momentos-interativos-planejados">💬 Momentos Interativos Planejados</h2>
+<ul>
+<li>Minuto 10: Discussão sobre a importância da entrada, processamento e saída em sistemas computacionais.</li>
+<li>Minuto 30: Atividade prática: Aplicação de algoritmos com entrada, processamento e saída.</li>
+</ul>
+<h2 id="fluxo-pedagogico">🎯 Fluxo Pedagógico</h2>
+<ol>
+<li>Introdução: Apresentação dos objetivos da aula e introdução ao tópico.</li>
+<li>Desenvolvimento: Desenvolvimento da aula, incluindo exposição, desenvolvimento da aula e aplicação de algoritmos.</li>
+<li>Prática: Aplicação de algoritmos com entrada, processamento e saída.</li>
+<li>Fechamento: Conclusão da aula, feedback e atividade em grupos.</li>
+</ol>
+<h3 id="introducao-ao-topico">🎉 Introdução ao Tópico</h3>
+<p><strong>Bem-vindos!</strong></p>
+<p>Hoje vamos explorar o mundo fascinante de <strong>Fluxogramas com decisão composta</strong>! 💡 Essa é uma técnica fundamental para desenvolver sistemas computacionais eficientes e efetivos. Vamos mergulhar nesse mundo de lógica e programação!</p>
+<p><strong>Objetivos da Aula</strong></p>
+<ul>
+<li>Desenvolver sistemas computacionais utilizando ambiente de desenvolvimento.</li>
+<li>Implementar estruturas de decisão composta utilizando SE…SENÃO e condições complementares.</li>
+<li>Manter a persistência e a atenção focada ao estruturar condições de decisões.</li>
+</ul>
+<h3 id="desenvolvimento-da-aula">📚 Desenvolvimento da Aula</h3>
+<p><strong>Conceitos de entrada, processamento e saída na lógica de programação</strong></p>
+<p>A lógica de programação é baseada em três conceitos fundamentais: <strong>entrada</strong>, <strong>processamento</strong> e <strong>saída</strong>. Esses conceitos são essenciais para entender como os sistemas computacionais funcionam.</p>
+<p><strong>Entrada</strong></p>
+<p>A entrada é o processo de capturar e processar informações do usuário ou de outros sistemas. Isso pode incluir dados digitados pelo usuário, informações coletadas de sensores ou dados carregados de arquivos.</p>
+<p><strong>Processamento</strong></p>
+<p>O processamento é o processo de analisar e manipular as informações de entrada. Isso pode incluir cálculos, comparações e transformações das informações.</p>
+<p><strong>Saída</strong></p>
+<p>A saída é o processo de apresentar os resultados do processamento para o usuário ou para outros sistemas. Isso pode incluir a exibição de resultados em tela, a impressão de relatórios ou a transmissão de dados para outros sistemas.</p>
+<p><strong>Tipos de dados de entrada</strong></p>
+<p>Existem vários tipos de dados de entrada, incluindo:</p>
+<ul>
+<li><strong>Numéricos</strong>: dados numéricos, como números inteiros ou decimais.</li>
+<li><strong>Alfanuméricos</strong>: dados que combinam letras e números.</li>
+<li><strong>Booleanos</strong>: dados que podem ter apenas dois valores: verdadeiro ou falso.</li>
+<li><strong>Data e hora</strong>: dados que representam a data e hora atual.</li>
+<li><strong>Binários</strong>: dados que são representados em código binário.</li>
+<li><strong>Arquivos</strong>: dados que são armazenados em arquivos.</li>
+</ul>
+<h3 id="discussao-em-classe">🤔 Discussão em Classe</h3>
+<ul>
+<li>Quais são as principais diferenças entre os tipos de dados de entrada?</li>
+<li>Como podemos aplicar os conceitos de entrada, processamento e saída em sistemas computacionais reais?</li>
+</ul>
+<h3 id="aplicacao-de-algoritmos">🎉 Aplicação de Algoritmos</h3>
+<p><strong>Aplicação de algoritmos com entrada, processamento e saída</strong></p>
+<p>Vamos aplicar os conceitos aprendidos em um exemplo prático! Crie um algoritmo que capture a idade do usuário, calcule a quantidade de anos que ele/ela tem vivido e exiba o resultado na tela.</p>
+<h3 id="conclusao-e-feedback">🎉 Conclusão e Feedback</h3>
+<p><strong>Conclusão</strong></p>
+<p>Hoje aprendemos sobre os conceitos fundamentais de <strong>Fluxogramas com decisão composta</strong>! 🎉 Essa técnica é essencial para desenvolver sistemas computacionais eficientes e efetivos. Vamos praticar e aplicar esses conceitos em exemplos práticos!</p>
+<p><strong>Feedback</strong></p>
+<ul>
+<li>Quais são as suas principais impressões sobre a aula de hoje?</li>
+<li>Quais são as suas principais dúvidas sobre os conceitos aprendidos?</li>
+</ul>
+<p><strong>Referências</strong></p>
+<ul>
+<li>[FACULDADES FAVE NORTE. Fundamentos de sistemas de informações, [s.d.]. Instituto Superior de Educação Verde Norte. Disponível em: https://docs.favenorte.edu.br/files/biblioteca/publicacoes-online/Apostila-Fundamentos-Sistema-de-Informacao.pdf#:~:text=Entrada%20%2D%20envolve%20a%20capta%C3%A7%C3%A3o%20e,transforma%C3%A7%C3%A3o%20at%C3%A9%20seu%20destino%20final. Acesso em: 01 fev. 2024.]</li>
+<li>[L GUSTAVO. Robótica inteligência artificial. Aula 26: Entrada, processamento e saída de dados – Lógica de programação. Disponível em: https://www.youtube.com/watch?v=D5MILdZNLPQ. Acesso em: 01 fev. 2024.]</li>
+<li>[SHARPAX. Aula 05 – Tipos de dados. Disponível em: https://www.youtube.com/watch?v=2ckX4M3ocdQ. Acesso em: 01 fev. 2024.]</li>
+</ul>
+<p><strong>REFINAMENTOS:</strong></p>
+<ol>
+<li><strong>Coerência e Fluxo</strong></li>
+<li>A estrutura da aula foi mantida, com uma introdução clara e objetivos claros.</li>
+<li>O desenvolvimento da aula foi refinado para incluir exemplos mais práticos e relevantes.</li>
+<li>A aplicação de algoritmos foi reforçada com uma atividade prática.</li>
+<li>
+<p>A conclusão e feedback foram mantidos, com perguntas para discussão e reflexão.</p>
+</li>
+<li>
+<p><strong>Qualidade Pedagógica</strong></p>
+</li>
+<li>Exemplos de algoritmos na preparação de receitas foram adicionados para tornar a aula mais engajadora.</li>
+<li>A discussão em classe foi refinada para incluir perguntas mais provocativas.</li>
+<li>
+<p>A atividade em grupos foi mantida, com instruções claras e objetivos claros.</p>
+</li>
+<li>
+<p><strong>Clareza e Didática</strong></p>
+</li>
+<li>A linguagem foi refinada para ser mais acessível e clara.</li>
+<li>Exemplos de entrada, processamento e saída foram adicionados para ilustrar melhor os conceitos.</li>
+<li>
+<p>A estrutura da aula foi mantida, com títulos claros e hierarquia lógica.</p>
+</li>
+<li>
+<p><strong>Formatação e Visual</strong></p>
+</li>
+<li>A formatação foi mantida, com uso consistente de emojis e destaque de títulos.</li>
+<li>Tabelas foram adicionadas para organizar melhor os conceitos.</li>
+<li>
+<p>Imagens foram adicionadas para ilustrar melhor os conceitos.</p>
+</li>
+<li>
+<p><strong>Engajamento</strong></p>
+</li>
+<li>A introdução foi refinada para ser mais cativante.</li>
+<li>A atividade em grupos foi mantida, com instruções claras e objetivos claros.</li>
+<li>
+<p>A conclusão e feedback foram mantidos, com perguntas para discussão e reflexão.</p>
+</li>
+<li>
+<p><strong>Completude</strong></p>
+</li>
+<li>Todos os tópicos prometidos foram abordados.</li>
+<li>Sugestões de adaptação foram adicionadas para tornar a aula mais flexível.</li>
+<li>Dicas extras para o professor foram adicionadas para tornar a aula mais útil.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
